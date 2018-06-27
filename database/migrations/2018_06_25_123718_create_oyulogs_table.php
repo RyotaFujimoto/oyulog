@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOnsensTable extends Migration
+class CreateOyulogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateOnsensTable extends Migration
      */
     public function up()
     {
-        Schema::create('onsens', function (Blueprint $table) {
+        Schema::create('oyulogs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->string('content');
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('price');
+            $table->string('place');
+            $table->string('image');
             
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->timestamps();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateOnsensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('onsens');
+        Schema::dropIfExists('oyulogs');
     }
 }

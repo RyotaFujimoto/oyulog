@@ -20,23 +20,25 @@
     <header>
         <div class="header-inner">
         <div class="logo">
-            <h1><a href="top.html"><img src="js/images_Onsen/oyulog.png" alt="アイコン"></a></h1>
+            <h1><a href="/"><img src="js/images_Onsen/oyulog.png" alt="アイコン"></a></h1>
         </div>
         <div>
         <nav id="nav">
         <ul>
-            <li><a href="kitchen.html">Search</a></li>
-            <li><a href="course.html">Ranking</a></li>
-            <li><a href="lesson.html">Log in</a></li>
-            <li><a href="gallery.html">Sign up</a></li>
-            {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
+            <li>{!! link_to_route('oyulogs.index', 'Index') !!}</li>
+            <li>{!! link_to_route('oyulogs.index', 'Ranking') !!}</li>
+            <li>{!! link_to_route('login', 'Login') !!}</a></li>
+            <li>{!! link_to_route('logout.get', 'Logout') !!}</a></li>
+            <li>{!! link_to_route('signup.get', 'Sign up', ['class' => 'btn btn-lg btn-primary']) !!}</a></li>
+           
         </ul>
       </nav>
       </div>
       </div>
     </header>
-   
-     
+
+     @yield('content')
+
 <footer>
 <ul>
    <li>
@@ -68,5 +70,6 @@ jQuery(function($){
  </script>
   </body>
   </div> 
+
 
 </html>

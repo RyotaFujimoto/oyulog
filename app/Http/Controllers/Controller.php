@@ -10,4 +10,15 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function counts($user) {
+        $count_oyulogs = $user->oyulogs()->count();
+
+        return [
+            'count_oyulogs' => $count_oyulogs,
+        ];
+    }
+    
+    
+    
 }

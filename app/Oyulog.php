@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Oyulog extends Model
 {
-    protected $fillable = ['content', 'user_id'];
+    protected $fillable = ['id','name', 'price', 'place', 'picture'];
 
-    public function user()
+    public function oyulog()
     {
         return $this->belongsTo(User::class);
     }

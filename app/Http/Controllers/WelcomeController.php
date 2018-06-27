@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Onsen;
+use App\Oyulog;
 
 class WelcomeController extends Controller
 {
@@ -15,9 +15,9 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        $oyulogs = Oyulog::orderBy('updated_at', 'desc')->paginate(20);
         return view('welcome', [
-            'onsens' => $onsens,
+            'oyulogs' => $oyulogs,
         ]);
     }
 }
