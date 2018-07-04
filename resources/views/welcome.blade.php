@@ -12,7 +12,7 @@
         <div id=search> 
           <h2>銭湯を探す</h2>
           {!! Form::open(['route' => 'oyulogs.result']) !!}
-             <p>{!! Form::label('name', '名称で探す:') !!}
+             <p>{!! Form::label('name', 'あああああで探す:') !!}
                 {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 {!! Form::submit('検索', ['class' => 'btn btn-primary']) !!}</p>
                 
